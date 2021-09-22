@@ -3,17 +3,37 @@
     <div class="icons">
       <div class="icon" @click="">
         <div class="icon-img">
-          <img class="icon-img-content" src="./src/assets/styles/iconfont/Home.png" alt=""/>
+          <img class="icon-img-content" :src="icon1"  alt=""/>
         </div>
-        <p class="icon-desc"></p>
+        <p class="icon-desc">事件上报</p>
+      </div>
+      <div class="icon" @click="">
+        <div class="icon-img">
+          <img class="icon-img-content" :src="icon2"  alt=""/>
+        </div>
+        <p class="icon-desc">我的宿舍</p>
+      </div>
+      <div class="icon" @click="">
+        <div class="icon-img">
+          <img class="icon-img-content" :src="icon3"  alt=""/>
+        </div>
+        <p class="icon-desc">光荣榜</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+// import Home from "/src/assets/styles/iconfont/Home.png"
 export default {
-  name: "HomeContent"
+  name: "HomeContent",
+  data(){
+    return{
+      icon1:require('../../../../src/assets/styles/iconfont/ReportEvents.png'),
+      icon2:require('../../../../src/assets/styles/iconfont/MyDormitory.png'),
+      icon3:require('../../../../src/assets/styles/iconfont/HonourRoll.png'),
+    }
+  }
 }
 </script>
 
@@ -21,17 +41,19 @@ export default {
 .icons {
   overflow: hidden;
   height: 0;
-  padding-bottom: 50%;
+  padding-bottom: 100px;
+  border-top:1px solid #d2d2d2;
+  border-bottom:1px solid #d2d2d2;
 }
-.icon {
+.icons .icon {
   position: relative;
   overflow: hidden;
   float: left;
-  width: 33.3%;
+  width: 33.333333%;
   height: 0;
-  padding-bottom: 25%;
+  padding-bottom: 100px;
 }
-.icon-img {
+.icons .icon .icon-img {
   border-width: 1px;
   position: absolute;
   top: 15px;
@@ -43,13 +65,13 @@ export default {
   width: 45px;
   height: 45px;
 }
-.icon-img-content {
+.icons .icon .icon-img .icon-img-content {
   display: block;
   margin: auto;
   height: 100%;
   width: 100%;
 }
-.icon-desc {
+.icons .icon .icon-desc {
   position: absolute;
   left: 0;
   right: 0;
@@ -57,6 +79,7 @@ export default {
   height: 18px;
   line-height: 0.44rem;
   text-align: center;
+  margin-bottom: 7px;
   color: #333;
 }
 </style>
