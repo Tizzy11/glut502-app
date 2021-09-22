@@ -11,6 +11,10 @@
       <i class="iconfont icon-xinxi navicon"></i>
       <p>界面二</p>
     </div>
+    <div class="item" @click="clickItem('/SecondPage')" :class="{active: $route.path==='/SecondPage'}">
+      <i class="iconfont icon-xinxi navicon"></i>
+      <p>测试</p>
+    </div>
     <div class="item" @click="clickItem('/ThridPage')" :class="{active: $route.path==='/ThridPage'}">
       <i class="iconfont icon-jiankang navicon"></i>
       <p>界面三</p>
