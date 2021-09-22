@@ -12,9 +12,12 @@ Vue.use(VueAxios, axios)
 //
 
 
-// import vueSwiper from 'vue-awesome-swiper'
-//
-// import 'swiper/swiper-bundle.css'
+//轮播图组件
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+// require styles
+import 'swiper/swiper-bundle.css'
+// 全局注册
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 
 // 引入element框架

@@ -20,6 +20,9 @@
         <p class="icon-desc">光荣榜</p>
       </div>
     </div>
+    <div>
+      <h4 style="margin-top: 10px">通知公告</h4>
+    </div>
   </div>
 </template>
 
@@ -42,7 +45,7 @@ export default {
   overflow: hidden;
   height: 0;
   padding-bottom: 100px;
-  border-top:1px solid #d2d2d2;
+  /*border-top:1px solid #d2d2d2;*/
   border-bottom:1px solid #d2d2d2;
 }
 .icons .icon {
