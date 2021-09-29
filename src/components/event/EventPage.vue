@@ -1,34 +1,19 @@
 <template>
   <div>
-    <button  @click="put">mlj进局子</button>
+    <event-header></event-header>
     <button-navs></button-navs>
   </div>
 </template>
 
 <script>
   import ButtonNavs from "../ButtonNavs"
+  import EventHeader from "./component/EventHeader";
   export default {
     name: 'EventPage',
     components:{
-      /*在内容容器引入底部导航栏*/
       ButtonNavs,
+      EventHeader
     },
-    // methods: {
-    //   put() {
-    //     this.axios.post('/api/do/api.php', {
-    //       params: {
-    //         type: 3
-    //       }
-    //     })
-    //       .then(response => {
-    //         console.log(response);
-    //         console.log("sss")
-    //
-    //       }, err => {
-    //         console.error(err);
-    //       })
-    //   }
-    // }
   }
 </script>
 

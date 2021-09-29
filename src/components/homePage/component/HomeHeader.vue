@@ -1,10 +1,11 @@
 <template>
   <div>
+    <h3 class="h3-home">首页</h3>
     <!--头部文字区域-->
     <div>
-      <p class="time">现在是：{{date}}</p>
-      <h3 class="login-status">未登录</h3>
-      <p class="dorm-p">桂林理工大学（8A502）</p>
+      <p class="time">{{date}}</p>
+      <h4 class="login-status" @click="test1">欢迎回来：{{name}}</h4>
+      <p class="dorm-p">桂林理工大学（{{dormitory}}）</p>
     </div>
     <!--轮播图-->
     <div class="wrapper">
@@ -22,12 +23,15 @@
 
 <script>
 import moment from "moment"
+import res from "autoprefixer";
 
 export default {
   name: "HomeHeader",
   components: {},
   data() {
     return {
+      name:sessionStorage.getItem('name'),
+      dormitory:sessionStorage.getItem('dormitory'),
       date: new Date(),
       swiperOption: {
         autoplay: 2000,
@@ -53,7 +57,7 @@ export default {
   mounted() {
     let _this = this; // 声明一个变量指向Vue实例this，保证作用域一致
     this.timer = setInterval(() => {
-      _this.date = moment(new Date()).format("YYYY-MM-DD"); // 修改数据date
+      _this.date = moment(new Date()).format("MM.DD HH:mm"); // 修改数据date
     }, 1000),
       console.log('Current Swiper instance object', this.mySwiper)
     this.mySwiper.slideTo(0, 1000, false) //从第一张开始，1秒轮播
@@ -62,18 +66,31 @@ export default {
     if (this.timer) {
       clearInterval(this.timer); // 在Vue实例销毁前，清除我们的定时器
     }
+  },
+  methods:{
+
+    test1(){
+      console.log(sessionStorage.getItem('name'));
+      console.log(sessionStorage.getItem('dormitory'));
+    }
   }
 }
 
 </script>
 
 <style scoped>
+.h3-home{
+  color: #505050;
+  border-bottom:1px solid #ececec;
+  margin-bottom: 0;
+}
 .time{
-  margin-top: 25px;
+  margin-top: 0;
   font-size: 13px;
   color: #6c6c6c;
 }
 .login-status{
+  color: #505050;
   margin-top: 0;
   margin-bottom: 0;
 }

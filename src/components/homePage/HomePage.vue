@@ -18,22 +18,6 @@
       ButtonNavs,
       HomeContent
     },
-    // methods: {
-    //   put() {
-    //     this.axios.post('/api/do/api.php', {
-    //       params: {
-    //         type: 3
-    //       }
-    //     })
-    //       .then(response => {
-    //         console.log(response);
-    //         console.log("sss")
-    //
-    //       }, err => {
-    //         console.error(err);
-    //       })
-    //   }
-    // }
 }
 </script>
 
